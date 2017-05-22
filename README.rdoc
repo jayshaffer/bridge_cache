@@ -1,0 +1,36 @@
+# BridgeCache
+
+https://www.getbridge.com/
+
+Bridge Cache is a data dump engine used to cache remote bridge data into a local database.
+
+The application mimics the bridge data model and will copy csv rows directly into the local
+data store without any extra configuration
+
+## Setup
+ gem install 'bridge_cache'
+
+ rake db:migrate
+
+ Enable Bridge data dumps through the administrative interface in bridge, or have your bridge
+ admin enable it for you.
+
+## Usage
+
+  To Import an entire csv
+  BridgeCache::User.import_from_csv(path_to_csv)
+
+  Import a list of models from a data dump automatically.  This feature requires a queue manager
+  like sidekiq or delayed jobs
+
+  BridgeCache::Jobs::ImportStart.perform_later(
+    bridge_base_url, (https://yourbridgeurl.bridgeapp.com)
+    bridge_api_key, (API key generated through bridge admin interface)
+    bridge_api_secret, (API secret generated through bridge admin interface)
+    [
+      'user',
+      'group',
+      'domain',
+      'course_template'
+    ],
+    [])

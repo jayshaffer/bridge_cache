@@ -1,0 +1,7 @@
+test:
+  adapter:  postgresql
+  database: bridge_cache_test 
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  port: 5432
