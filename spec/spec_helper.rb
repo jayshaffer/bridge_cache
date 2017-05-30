@@ -1,4 +1,3 @@
-$LOAD_PATH << '../lib/bridge_cache/plugins'
 require 'bundler'
 require "rails/all"
 Bundler.require :default, :development
