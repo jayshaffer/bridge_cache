@@ -16,7 +16,7 @@ module BridgeCache::Jobs
         end
       end
 
-      WorkerHelper.invoke_next(chain)
+      BridgeCache::Utils::WorkerHelper.invoke_next(chain)
     end
   end
 end
