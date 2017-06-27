@@ -1,5 +1,6 @@
 module BridgeCache::Jobs
   class ImportData < ActiveJob::Base
+    include BridgeCache::Utils::WorkerHelper
     queue_as :default
 
     def perform(bridge_base_url, bridge_api_key, bridge_api_secret, models, chain = [])
@@ -14,6 +15,8 @@ module BridgeCache::Jobs
           end
         end
       end
+
+      WorkerHelper.invoke_next(chain)
     end
   end
 end
