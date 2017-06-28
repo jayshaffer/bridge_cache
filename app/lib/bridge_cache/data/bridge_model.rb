@@ -7,5 +7,10 @@ module BridgeCache::Data
     def create_from_csv_row(row)
       BridgeCache::Plugins::CSVDump::dump_row(self, row)
     end
+
+    def cleanup(row_ids)
+      # Implement this method in your model if you want to do any sort of post creation cleanup.
+      # See tagging.rb for an example.
+    end
   end
 end
