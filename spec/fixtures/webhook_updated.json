@@ -1,0 +1,29 @@
+{
+  "resource":"course_template",
+  "trigger":"updated",
+  "author":{
+    "email":"jcool@acme.com",
+    "id":1,
+    "first_name":"Joe",
+    "last_name":"Cool"
+  },
+  "course_template":{
+    "course_type":0,
+    "enrollments_count":0,
+    "estimated_time":1,
+    "external_status":0,
+    "has_certificate":false,
+    "id":55,
+    "passing_threshold":80,
+    "published_at":"2016-09-22T18:18:30.094-06:00",
+    "title":"wh-2",
+    "program_ids":[
+      1,2
+    ],
+    "library_item":false,
+    "published":true,
+    "tags":[
+      "assessment=1"
+    ]
+  }
+}
