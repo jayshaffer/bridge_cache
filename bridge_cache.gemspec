@@ -29,4 +29,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'bundler', '>= 0'
   s.add_development_dependency 'database_cleaner', '>= 0'
   s.add_development_dependency 'pg', '>= 0'
+  s.add_development_dependency 'shoulda-matchers'
 end

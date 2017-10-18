@@ -17,6 +17,9 @@ describe BridgeCache::CourseTemplate, type: :model do
       expect(BridgeCache::CourseTemplate.first.domain).to(eq(BridgeCache::Domain.first))
       expect(BridgeCache::CourseTemplate.first.user).to(eq(BridgeCache::User.first))
     end
+
+    it { should have_many(:affiliated_sub_accounts) }
+    it { should have_many(:domains) }
   end
 
 end
