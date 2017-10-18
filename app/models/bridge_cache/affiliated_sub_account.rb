@@ -12,5 +12,9 @@ module BridgeCache
     def fix_item_type
       self.item_type = "BridgeCache::#{self.item_type}"
     end
+
+    def self.cleanup(current_row_ids)
+      BridgeCache::AffiliatedSubAccount.where.not(bridge_id: current_row_ids).destroy_all
+    end
   end
 end
