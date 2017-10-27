@@ -12,6 +12,8 @@ module BridgeCache
     has_many :program_enrollments, foreign_key: :user_id, primary_key: :bridge_id, class_name: 'BridgeCache::ProgramEnrollment'
     has_many :memberships, foreign_key: :user_id, primary_key: :bridge_id, class_name: 'BridgeCache::Membership'
     has_many :learner_custom_field_values, foreign_key: :user_id, primary_key: :bridge_id, class_name: 'BridgeCache::LearnerCustomFieldValue'
+    has_many :live_course_enrollments, foreign_key: :user_id, primary_key: :bridge_id, class_name: 'BridgeCache::LiveCourseEnrollment'
+    has_many :live_course_session_registrations, foreign_key: :user_id, primary_key: :bridge_id, class_name: 'BridgeCache::LiveCourseSessionRegistration'
 
     serialize :config
 

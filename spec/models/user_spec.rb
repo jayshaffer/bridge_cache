@@ -17,6 +17,19 @@ describe BridgeCache::User, type: :model do
       expect(BridgeCache::User.first.domain).to(eq(BridgeCache::Domain.first))
       expect(BridgeCache::User.first.enrollments.first).to(eq(BridgeCache::Enrollment.first))
     end
+
+    it 'should have a number of live course enrollments' do
+      BridgeCache::LiveCourseEnrollment.import_from_csv(get_fixture_path('live_course_enrollments.csv'))
+      BridgeCache::User.import_from_csv(get_fixture_path('users.csv'))
+      expect(BridgeCache::User.first.live_course_enrollments.count).to(eq(1))
+    end
+
+    it 'should have a number of live course session registrations' do
+      BridgeCache::LiveCourseSessionRegistration.import_from_csv(get_fixture_path('live_course_session_registrations.csv'))
+      BridgeCache::User.import_from_csv(get_fixture_path('users.csv'))
+      expect(BridgeCache::User.first.live_course_session_registrations.count).to(eq(1))
+    end
+
   end
 
 end
