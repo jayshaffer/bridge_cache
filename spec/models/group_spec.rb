@@ -9,4 +9,12 @@ describe BridgeCache::Group, type: :model do
     end
   end
 
+  describe 'check scope' do
+    it 'should be able to scope by domain id' do
+      BridgeCache::CourseTemplate.import_from_csv(get_fixture_path('users.csv'))
+      BridgeCache::Group.import_from_csv(get_fixture_path('groups.csv'))
+      expect(BridgeCache::Group.in_domain(1).count).to(eq(7))
+    end
+  end
+
 end

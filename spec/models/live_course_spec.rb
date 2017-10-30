@@ -14,6 +14,16 @@ describe BridgeCache::LiveCourse, type: :model do
       BridgeCache::LiveCourseEnrollment.import_from_csv(get_fixture_path('live_course_enrollments.csv'))
       expect(BridgeCache::LiveCourse.first.live_course_enrollments.size).to(eq(4))
     end
+
+    describe 'check scope' do
+      it 'should be able to scope by domain id' do
+        BridgeCache::Domain.import_from_csv(get_fixture_path('domains.csv'))
+        BridgeCache::LiveCourse.import_from_csv(get_fixture_path('live_courses.csv'))
+        rows = BridgeCache::LiveCourse.in_domain(2)
+        expect(rows.count).to(eq(1))
+      end
+    end
+
   end
 
 end

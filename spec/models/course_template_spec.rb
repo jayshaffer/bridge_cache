@@ -22,4 +22,13 @@ describe BridgeCache::CourseTemplate, type: :model do
     it { should have_many(:domains) }
   end
 
+  describe 'check scope' do
+    it 'should scope to domain by affilicated accounts' do
+      BridgeCache::CourseTemplate.import_from_csv(get_fixture_path('course_templates.csv'))
+      BridgeCache::AffiliatedSubAccount.import_from_csv(get_fixture_path('affiliated_sub_accounts.csv'))
+      rows = BridgeCache::CourseTemplate.in_domain(50).all
+      expect(rows.count).to(eq(1))
+    end
+  end
+
 end

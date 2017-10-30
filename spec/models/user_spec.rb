@@ -32,4 +32,13 @@ describe BridgeCache::User, type: :model do
 
   end
 
+  describe 'check scope' do
+    it 'should scope to domain' do
+      BridgeCache::User.import_from_csv(get_fixture_path('users.csv'))
+      rows = BridgeCache::User.in_domain(2).all
+      expect(rows.count).to(eq(1))
+    end
+  end
+
+
 end

@@ -8,6 +8,7 @@ module BridgeCache
     has_many :program_group_enrollments, foreign_key: :group_id, primary_key: :bridge_id, class_name: 'BridgeCache::ProgramGroupEnrollment'
     has_many :group_enrollments, foreign_key: :group_id, primary_key: :bridge_id, class_name: 'BridgeCache::GroupEnrollment'
     has_many :memberships, foreign_key: :group_id, primary_key: :bridge_id, class_name: 'BridgeCache::Membership'
+    belongs_to :domain, foreign_key: :domain_id, primary_key: :bridge_id, class_name: 'BridgeCache::Domain', optional: true
 
   end
 end

@@ -6,4 +6,4 @@ id,name,parent_id,created_at,updated_at,memberships_count,domain_id,deleted_at,t
 9701,Position - Position617,,2017-04-24 23:24:47.013695,2017-05-11 16:52:28,1,1,,SmartGroup,,0,,
 19011,Org unit - Org Unit525,,2017-04-26 21:42:38.091938,2017-05-03 21:24:08,1,1,,SmartGroup,,0,,
 1532,LEASE GROUP - Standard PP $49/1%,,2017-04-14 04:22:48.287894,2017-04-14 04:22:48.287894,0,1,2017-04-14 16:32:25.772906,SmartGroup,,0,,
-276,Personal Email - personaltest244@example.com,,2017-04-14 04:04:21.054555,2017-04-14 04:04:21.054555,0,1,2017-04-14 04:19:07.026584,SmartGroup,,0,,
+276,Personal Email - personaltest244@example.com,,2017-04-14 04:04:21.054555,2017-04-14 04:04:21.054555,0,2,2017-04-14 04:19:07.026584,SmartGroup,,0,,

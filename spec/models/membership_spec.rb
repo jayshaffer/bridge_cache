@@ -9,4 +9,15 @@ describe BridgeCache::Membership, type: :model do
     end
   end
 
+
+  describe 'check scope' do
+    it 'should be able to scope by domain id' do
+      BridgeCache::Domain.import_from_csv(get_fixture_path('domains.csv'))
+      BridgeCache::Group.import_from_csv(get_fixture_path('groups.csv'))
+      BridgeCache::Membership.import_from_csv(get_fixture_path('memberships.csv'))
+      rows = BridgeCache::Membership.in_domain(2)
+      expect(rows.count).to(eq(1))
+    end
+  end
+
 end

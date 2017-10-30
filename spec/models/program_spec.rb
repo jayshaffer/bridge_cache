@@ -9,4 +9,13 @@ describe BridgeCache::ProgramEnrollment, type: :model do
     end
   end
 
+  describe 'check scope' do
+    it 'should scope to domain' do
+      BridgeCache::Program.import_from_csv(get_fixture_path('programs.csv'))
+      rows = BridgeCache::Program.in_domain(2).all
+      expect(rows.count).to(eq(1))
+    end
+  end
+
+
 end

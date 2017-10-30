@@ -1,5 +1,12 @@
 module BridgeCache::Data
   module BridgeModel
+
+    def self.extended(base)
+      base.class_eval do
+        scope :in_domain, -> (domain_id) {for_domain(domain_id)}
+      end
+    end
+
     def import_from_csv(file_path)
       BridgeCache::Plugins::CSVDump::dump_to_table(self, file_path)
     end
@@ -27,6 +34,10 @@ module BridgeCache::Data
 
     def webhook_completed(message)
       raise "Method not implemented"
+    end
+
+    def for_domain(domain_id)
+      where(domain_id: domain_id)
     end
 
     private
