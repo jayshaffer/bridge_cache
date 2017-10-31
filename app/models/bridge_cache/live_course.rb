@@ -11,7 +11,7 @@ module BridgeCache
 
     def self.for_domain(domain_id)
       includes(:domains)
-      .where('bridge_cache_affiliated_sub_accounts.domain_id = ? OR bridge_cache_live_courses.domain_id = ?', domain_id, domain_id)
+      .where('bridge_cache_affiliated_sub_accounts.domain_id = ? OR bridge_cache_live_courses.sub_account_id = ?', domain_id, domain_id)
       .references(:domains)
     end
 

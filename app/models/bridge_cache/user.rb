@@ -17,5 +17,9 @@ module BridgeCache
 
     serialize :config
 
+    def self.for_domain(domain_id)
+      where('bridge_cache_users.sub_account_id = ?', domain_id)
+    end
+
   end
 end

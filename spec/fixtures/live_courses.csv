@@ -40,5 +40,5 @@ id,title,description,created_at,updated_at,user_id,domain_id,deleted_at,sessions
 38,LiveTrainingOrientation3hours1attach,orientation,2017-08-24 15:16:32.843307,2017-08-24 15:18:48.087654,12,103,,1,1,1,103,
 30,LiveTrainingnoattach3.5,annual,2017-08-16 15:33:13.925083,2017-08-16 15:40:35.842898,12,1,,1,1,0,1,
 39,,,2017-09-18 19:07:20.221763,2017-09-18 19:07:25.187483,12,1,,0,0,0,1,
-26,LiveTrainingCoreincldAttachment1hour,core,2017-08-11 20:43:23.144444,2017-09-18 20:48:06,12,2,,1,2,1,1,
+26,LiveTrainingCoreincldAttachment1hour,core,2017-08-11 20:43:23.144444,2017-09-18 20:48:06,12,2,,1,2,1,2,
 42,NewLiveTrainingAnnualPre,annual pre-service,2017-09-21 14:02:18.963586,2017-09-21 14:03:19,12,1,,1,2,0,1,

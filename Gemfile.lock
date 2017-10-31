@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bridge_cache (0.0.19)
+    bridge_cache (0.0.21)
       bridge_blueprint (~> 0.0)
       rails (~> 5.0)
 
