@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe BridgeCache::LiveCourseEnrollment, type: :model do
-
   describe 'import_from_csv' do
     it 'should be able to take a csv dump into a table' do
       BridgeCache::LiveCourseEnrollment.import_from_csv(get_fixture_path('live_course_enrollments.csv'))
@@ -23,5 +22,4 @@ describe BridgeCache::LiveCourseEnrollment, type: :model do
       expect(rows.count).to(eq(2))
     end
   end
-
 end

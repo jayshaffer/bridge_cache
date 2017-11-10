@@ -1,0 +1,26 @@
+class AddUniqConstraints < ActiveRecord::Migration[5.1]
+  def change
+    add_unique_constraint :bridge_cache_affiliated_sub_accounts, %i[bridge_id domain_id], deferrable: false, name: 'bridge_cache_affiliated_sub_accounts_bridge_uniq'
+    add_unique_constraint :bridge_cache_course_templates, %i[bridge_id sub_account_id], deferrable: false, name: 'bridge_cache_course_templates_bridge_uniq'
+    add_unique_constraint :bridge_cache_custom_fields, %i[bridge_id domain_id], deferrable: false, name: 'bridge_cache_custom_fields_bridge_uniq'
+    add_unique_constraint :bridge_cache_domains, [:bridge_id], deferrable: false, name: 'bridge_cache_domains_bridge_uniq'
+    add_unique_constraint :bridge_cache_enrollment_profiles, %i[bridge_id domain_id], deferrable: false, name: 'bridge_cache_enrollment_profiles_bridge_uniq'
+    add_unique_constraint :bridge_cache_enrollments, [:bridge_id], deferrable: false, name: 'bridge_cache_enrollments_bridge_uniq'
+    add_unique_constraint :bridge_cache_grants, %i[bridge_id domain_id], deferrable: false, name: 'bridge_cache_grants_bridge_uniq'
+    add_unique_constraint :bridge_cache_groups, %i[bridge_id domain_id], deferrable: false, name: 'bridge_cache_groups_bridge_uniq'
+    add_unique_constraint :bridge_cache_group_enrollments, [:bridge_id], deferrable: false, name: 'bridge_cache_group_enrollments_bridge_uniq'
+    add_unique_constraint :bridge_cache_learner_custom_field_values, [:bridge_id], deferrable: false, name: 'bridge_cache_learner_custom_field_values_bridge_uniq'
+    add_unique_constraint :bridge_cache_live_course_enrollments, [:bridge_id], deferrable: false, name: 'bridge_cache_live_course_enrollments_bridge_uniq'
+    add_unique_constraint :bridge_cache_live_course_session_registrations, [:bridge_id], deferrable: false, name: 'bridge_cache_live_course_session_registrations_bridge_uniq'
+    add_unique_constraint :bridge_cache_live_course_sessions, %i[bridge_id domain_id], deferrable: false, name: 'bridge_cache_live_course_sessions_bridge_uniq'
+    add_unique_constraint :bridge_cache_live_courses, %i[bridge_id domain_id], deferrable: false, name: 'bridge_cache_live_courses_bridge_uniq'
+    add_unique_constraint :bridge_cache_memberships, [:bridge_id], deferrable: false, name: 'bridge_cache_memberships_bridge_uniq'
+    add_unique_constraint :bridge_cache_program_enrollments, [:bridge_id], deferrable: false, name: 'bridge_cache_program_enrollments_bridge_uniq'
+    add_unique_constraint :bridge_cache_program_group_enrollments, [:bridge_id], deferrable: false, name: 'bridge_cache_program_group_enrollments_bridge_uniq'
+    add_unique_constraint :bridge_cache_program_items, [:bridge_id], deferrable: false, name: 'bridge_cache_program_items_bridge_uniq'
+    add_unique_constraint :bridge_cache_programs, [:bridge_id], deferrable: false, name: 'bridge_cache_programs_bridge_uniq'
+    add_unique_constraint :bridge_cache_tags, [:bridge_id], deferrable: false, name: 'bridge_cache_tags_bridge_uniq'
+    add_unique_constraint :bridge_cache_taggings, [:bridge_id], deferrable: false, name: 'bridge_cache_taggings_bridge_uniq'
+    add_unique_constraint :bridge_cache_users, %i[bridge_id sub_account_id], deferrable: false, name: 'bridge_cache_users_bridge_uniq'
+  end
+end

@@ -10,6 +10,5 @@ module BridgeCache
     belongs_to :domain, foreign_key: :domain_id, primary_key: BridgeCache.primary_key, class_name: BridgeCache::Domain.name, optional: true
     belongs_to :live_course_enrollment, primary_key: BridgeCache.primary_key, class_name: BridgeCache::LiveCourseEnrollment.name, optional: true
     belongs_to :live_course_session, primary_key: BridgeCache.primary_key, class_name: BridgeCache::LiveCourseSession.name, optional: true
-
   end
 end

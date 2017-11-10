@@ -16,6 +16,5 @@ module BridgeCache
     belongs_to :owner, class_name: BridgeCache::User.name
 
     serialize :config
-
   end
 end

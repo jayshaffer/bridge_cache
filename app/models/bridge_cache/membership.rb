@@ -6,8 +6,7 @@ module BridgeCache
     belongs_to :user, foreign_key: :group_id, primary_key: BridgeCache.primary_key, class_name: BridgeCache::User.name, optional: true
 
     def self.for_domain(domain_id)
-      joins(:group).where(bridge_cache_groups: {domain_id: domain_id})
+      joins(:group).where(bridge_cache_groups: { domain_id: domain_id })
     end
-
   end
 end

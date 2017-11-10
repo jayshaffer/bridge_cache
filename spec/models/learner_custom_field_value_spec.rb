@@ -8,7 +8,6 @@ describe BridgeCache::LearnerCustomFieldValue, type: :model do
     end
   end
 
-
   describe 'check scope' do
     it 'should be able to scope by domain id' do
       BridgeCache::Domain.import_from_csv(get_fixture_path('domains.csv'))
@@ -18,5 +17,4 @@ describe BridgeCache::LearnerCustomFieldValue, type: :model do
       expect(rows.count).to(eq(1))
     end
   end
-
 end

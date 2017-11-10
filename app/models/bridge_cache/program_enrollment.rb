@@ -8,6 +8,5 @@ module BridgeCache
     def self.for_domain(domain_id)
       joins(:program).merge(BridgeCache::Program.for_domain(domain_id))
     end
-
   end
 end

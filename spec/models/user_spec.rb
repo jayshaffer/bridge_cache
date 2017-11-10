@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe BridgeCache::User, type: :model do
-
   describe 'import_from_csv' do
     it 'should be able to take a csv dump into a table' do
       BridgeCache::User.import_from_csv(get_fixture_path('users.csv'))
@@ -29,7 +28,6 @@ describe BridgeCache::User, type: :model do
       BridgeCache::User.import_from_csv(get_fixture_path('users.csv'))
       expect(BridgeCache::User.first.live_course_session_registrations.count).to(eq(1))
     end
-
   end
 
   describe 'check scope' do
@@ -48,5 +46,4 @@ describe BridgeCache::User, type: :model do
       expect(user2.manager.id).to(eq(user.id))
     end
   end
-
 end

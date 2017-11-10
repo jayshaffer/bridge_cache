@@ -9,7 +9,7 @@ module BridgeCache
 
     def bridge_id
       if self.class.column_names.include? BRIDGE_ID
-         self[:bridge_id]
+        self[:bridge_id]
       else
         id
       end
@@ -19,9 +19,8 @@ module BridgeCache
       if BridgeCache.use_internal_database
         table_name
       else
-        self.to_s.demodulize.underscore.pluralize
+        to_s.demodulize.underscore.pluralize
       end
     end
-
   end
 end

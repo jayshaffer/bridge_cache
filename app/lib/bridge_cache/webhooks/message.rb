@@ -1,6 +1,5 @@
 module BridgeCache::Webhooks
   class Message
-
     attr_reader :payload
 
     def initialize(payload)

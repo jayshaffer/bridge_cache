@@ -11,8 +11,18 @@ module BridgeCache
     end
 
     def parse_json
-      json = BridgeCache::Plugins::DataTransform::valid_json?(self.config)
+      json = self.parse_config(self.config)
       self.config = json if json.present?
+    end
+
+    def self.parse_config(config)
+      json = BridgeCache::Plugins::DataTransform::valid_json?(config)
+    end
+
+    def self.format_import_row(row)
+      json = parse_config(row['config'])
+      row['config'] = json if json.present?
+      row
     end
 
   end

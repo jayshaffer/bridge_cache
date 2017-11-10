@@ -24,6 +24,5 @@ module BridgeCache
     def manager
       domain.owner
     end
-
   end
 end

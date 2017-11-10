@@ -1,3 +1,3 @@
 module BridgeCache
-  VERSION = "0.2.8"
+  VERSION = '0.3.01'.freeze
 end

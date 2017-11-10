@@ -5,7 +5,7 @@ module BridgeCache::Utils
       job = job_chain.shift
       if job
         job_class = Object.const_get(job[:job].classify)
-        job_class.perform_later(*(job[:params].concat(params)))
+        job_class.perform_later(*job[:params].concat(params))
       end
     end
   end

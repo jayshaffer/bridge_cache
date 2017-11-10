@@ -92,6 +92,5 @@ class AddIndexes < ActiveRecord::Migration[5.1]
     add_index :bridge_cache_live_course_sessions, :domain_id
     add_index :bridge_cache_live_course_sessions, :sub_account_id
     add_index :bridge_cache_live_course_sessions, :parent_id
-
   end
 end
