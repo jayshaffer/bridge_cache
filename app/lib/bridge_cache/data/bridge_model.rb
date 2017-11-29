@@ -4,6 +4,7 @@ module BridgeCache::Data
     def self.extended(base)
       base.class_eval do
         scope :in_domain, -> (domain_id) {for_domain(domain_id)}
+        scope :active, -> {is_active?}
       end
     end
 
@@ -38,6 +39,12 @@ module BridgeCache::Data
 
     def for_domain(domain_id)
       where(domain_id: domain_id)
+    end
+
+    def is_active?
+      if self.column_names.include? 'deleted_at'
+        where(deleted_at: nil)
+      end
     end
 
     private
