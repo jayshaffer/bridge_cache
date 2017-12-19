@@ -3,12 +3,16 @@ module BridgeCache::Jobs
     queue_as :default
     include BridgeCache::Utils::WorkerHelper
 
-    def perform(bridge_base_url, bridge_api_key, bridge_api_secret, models, chain = [])
+    ATTEMPTS_THRESHOLD = 30
+
+    def perform(bridge_base_url, bridge_api_key, bridge_api_secret, models, attempts, chain = [])
       remote_data = BridgeBlueprint::RemoteData.new(bridge_base_url, bridge_api_key, bridge_api_secret)
-      if remote_data.status == BridgeBlueprint::Constants::STATUS_COMPLETE
+      if attempts > ATTEMPTS_THRESHOLD
+        Rails.logger.fatal("Bridge data dump failed to download after #{(ATTEMPTS_THRESHOLD * 30) / 60} minutes")
+      elsif remote_data.status == BridgeBlueprint::Constants::STATUS_COMPLETE
         BridgeCache::Jobs::ImportData.set(queue: self.queue_name).perform_later(bridge_base_url, bridge_api_key, bridge_api_secret, models, chain)
       elsif remote_data.status == BridgeBlueprint::Constants::STATUS_PENDING
-        BridgeCache::Jobs::ImportCheck.set(queue: self.queue_name, wait: 30.seconds).perform_later(bridge_base_url, bridge_api_key, bridge_api_secret, models, chain)
+        BridgeCache::Jobs::ImportCheck.set(queue: self.queue_name, wait: 30.seconds).perform_later(bridge_base_url, bridge_api_key, bridge_api_secret, models, attempts + 1, chain)
       elsif remote_data.status == BridgeBlueprint::Constants::STATUS_FAILED || remote_data.status == BridgeBlueprint::Constants::STATUS_NOT_FOUND
         raise 'Bridge data dump download failed'
       end

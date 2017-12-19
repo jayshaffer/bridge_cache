@@ -18,16 +18,16 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", '~> 5.0'
-  s.add_dependency "bridge_blueprint", '~> 0.0'
+  s.add_dependency "bridge_blueprint", '~> 0.0.04'
 
-  s.add_development_dependency 'actionmailer', '>= 0'
-  s.add_development_dependency 'byebug', '>= 0'
-  s.add_development_dependency 'actionpack', '>= 0'
-  s.add_development_dependency "rspec-rails", ">= 0"
-  s.add_development_dependency "factory_girl_rails", ">= 0"
-  s.add_development_dependency 'combustion', '>= 0'
-  s.add_development_dependency 'bundler', '>= 0'
-  s.add_development_dependency 'database_cleaner', '>= 0'
-  s.add_development_dependency 'pg', '>= 0'
-  s.add_development_dependency 'shoulda-matchers'
+  s.add_development_dependency 'actionmailer', '>= 5.1.4'
+  s.add_development_dependency 'byebug', '>= 9.1.0'
+  s.add_development_dependency 'actionpack', '>= 5.1.4'
+  s.add_development_dependency "rspec-rails", ">= 3.7.2"
+  s.add_development_dependency "factory_girl_rails", ">= 4.9.0"
+  s.add_development_dependency 'combustion', '>= 0.7.0'
+  s.add_development_dependency 'bundler', '>= 1.16.0'
+  s.add_development_dependency 'database_cleaner', '>= 1.6.2'
+  s.add_development_dependency 'pg', '>= 0.21.0'
+  s.add_development_dependency 'shoulda-matchers', '>= 3.1.2'
 end

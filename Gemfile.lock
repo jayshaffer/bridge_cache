@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    bridge_cache (0.0.22)
-      bridge_blueprint (~> 0.0)
+    bridge_cache (0.1.0)
+      bridge_blueprint (~> 0.0.04)
       rails (~> 5.0)
 
 GEM
@@ -164,17 +164,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionmailer
-  actionpack
+  actionmailer (>= 5.1.4)
+  actionpack (>= 5.1.4)
   bridge_cache!
-  bundler
-  byebug
-  combustion
-  database_cleaner
-  factory_girl_rails
-  pg
-  rspec-rails
-  shoulda-matchers
+  bundler (>= 1.16.0)
+  byebug (>= 9.1.0)
+  combustion (>= 0.7.0)
+  database_cleaner (>= 1.6.2)
+  factory_girl_rails (>= 4.9.0)
+  pg (>= 0.21.0)
+  rspec-rails (>= 3.7.2)
+  shoulda-matchers (>= 3.1.2)
 
 BUNDLED WITH
    1.16.0
