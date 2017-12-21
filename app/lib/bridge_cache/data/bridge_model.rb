@@ -1,10 +1,19 @@
 module BridgeCache::Data
   module BridgeModel
 
+    def adjusted_table_name
+      if BridgeCache.use_internal_database
+        table_name
+      else
+        self.to_s.demodulize.underscore.pluralize
+      end
+    end
+
     def self.extended(base)
       base.class_eval do
         scope :in_domain, -> (domain_id) {for_domain(domain_id)}
         scope :active, -> {is_active?}
+        self.table_name = self.adjusted_table_name
       end
     end
 

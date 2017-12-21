@@ -1,5 +1,5 @@
 module BridgeCache
-  class ApplicationRecord < ActiveRecord::Base
+  class ApplicationRecord < BridgeBaseModel
     self.abstract_class = true
   end
 end

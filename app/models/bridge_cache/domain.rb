@@ -1,5 +1,5 @@
 module BridgeCache
-  class Domain < ActiveRecord::Base
+  class Domain < BridgeBaseModel
     extend BridgeCache::Data::BridgeModel
 
     has_many :domain_children, primary_key: 'bridge_id', foreign_key: 'parent_id', class_name: 'BridgeCache::Domain'

@@ -1,11 +1,11 @@
 module BridgeCache
-  class AffiliatedSubAccount < ActiveRecord::Base
+  class AffiliatedSubAccount < BridgeBaseModel
     extend BridgeCache::Data::BridgeModel
 
     before_save :fix_item_type
 
     belongs_to :item, polymorphic: true, optional: true
-    belongs_to :domain, foreign_key: :domain_id, primary_key: :bridge_id, class_name: 'BridgeCache::Domain', optional: true
+    belongs_to :domain, foreign_key: :domain_id, primary_key: BridgeCache.primary_key, class_name: 'BridgeCache::Domain', optional: true
 
     private
 
@@ -16,5 +16,6 @@ module BridgeCache
     def self.cleanup(current_row_ids)
       BridgeCache::AffiliatedSubAccount.where.not(bridge_id: current_row_ids).destroy_all
     end
+
   end
 end

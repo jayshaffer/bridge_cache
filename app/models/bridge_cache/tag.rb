@@ -1,8 +1,8 @@
 module BridgeCache
-  class Tag < ActiveRecord::Base
+  class Tag < BridgeBaseModel
     extend BridgeCache::Data::BridgeModel
 
-    has_many :taggings, foreign_key: :tag_id, primary_key: :bridge_id, class_name: 'BridgeCache::Tagging'
+    has_many :taggings, foreign_key: :tag_id, primary_key: BridgeCache.primary_key, class_name: 'BridgeCache::Tagging'
 
   end
 end

@@ -1,5 +1,6 @@
 class CreateBridgeCacheEnrollments < ActiveRecord::Migration[5.0]
   def change
+    return unless BridgeCache.use_internal_database
     create_table :bridge_cache_enrollments do |t|
       t.integer :bridge_id, limit: 8
       t.integer :user_id, limit: 8

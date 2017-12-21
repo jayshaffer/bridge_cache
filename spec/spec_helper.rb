@@ -45,12 +45,10 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-
   config.before(:suite) do
     # Clean all tables to start
-    DatabaseCleaner.clean_with :truncation
     # Use transactions for tests
-    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.strategy = :deletion
   end
 
   config.before(:each) do

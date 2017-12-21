@@ -1,5 +1,6 @@
 class CreateLiveCourseEnrollments < ActiveRecord::Migration[5.1]
   def change
+    return unless BridgeCache.use_internal_database
     create_table :bridge_cache_live_course_enrollments do |t|
       t.integer :bridge_id, limit: 8
       t.integer :live_course_id,limit: 8

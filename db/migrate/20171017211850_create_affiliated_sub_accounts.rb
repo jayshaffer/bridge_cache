@@ -1,5 +1,6 @@
 class CreateAffiliatedSubAccounts < ActiveRecord::Migration[5.1]
   def change
+    return unless BridgeCache.use_internal_database
     create_table :bridge_cache_affiliated_sub_accounts do |t|
       t.integer :bridge_id
       t.integer :item_id

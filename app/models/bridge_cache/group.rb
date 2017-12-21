@@ -1,14 +1,14 @@
 module BridgeCache
-  class Group < ActiveRecord::Base
+  class Group < BridgeBaseModel
     extend BridgeCache::Data::BridgeModel
 
     self.inheritance_column = nil
 
-    belongs_to :user, foreign_key: :user_id, primary_key: :bridge_id, class_name: 'BridgeCache::User', optional: true
-    has_many :program_group_enrollments, foreign_key: :group_id, primary_key: :bridge_id, class_name: 'BridgeCache::ProgramGroupEnrollment'
-    has_many :group_enrollments, foreign_key: :group_id, primary_key: :bridge_id, class_name: 'BridgeCache::GroupEnrollment'
-    has_many :memberships, foreign_key: :group_id, primary_key: :bridge_id, class_name: 'BridgeCache::Membership'
-    belongs_to :domain, foreign_key: :domain_id, primary_key: :bridge_id, class_name: 'BridgeCache::Domain', optional: true
+    belongs_to :user, foreign_key: :user_id, primary_key: BridgeCache.primary_key, class_name: 'BridgeCache::User', optional: true
+    has_many :program_group_enrollments, foreign_key: :group_id, primary_key: BridgeCache.primary_key, class_name: 'BridgeCache::ProgramGroupEnrollment'
+    has_many :group_enrollments, foreign_key: :group_id, primary_key: BridgeCache.primary_key, class_name: 'BridgeCache::GroupEnrollment'
+    has_many :memberships, foreign_key: :group_id, primary_key: BridgeCache.primary_key, class_name: 'BridgeCache::Membership'
+    belongs_to :domain, foreign_key: :domain_id, primary_key: BridgeCache.primary_key, class_name: 'BridgeCache::Domain', optional: true
 
   end
 end
