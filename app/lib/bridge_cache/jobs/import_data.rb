@@ -3,7 +3,7 @@ module BridgeCache::Jobs
     include BridgeCache::Utils::WorkerHelper
     queue_as :default
 
-    def perform(bridge_base_url, bridge_api_key, bridge_api_secret, models, chain = [])
+    def perform(bridge_base_url, bridge_api_key, bridge_api_secret, models, chain = [], global_options = {})
       begin
         remote_data = BridgeBlueprint::RemoteData.new(bridge_base_url, bridge_api_key, bridge_api_secret)
         Dir.mktmpdir do |dir|
