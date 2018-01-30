@@ -40,5 +40,13 @@ describe BridgeCache::User, type: :model do
     end
   end
 
+  describe '#manager' do
+    it 'should get the manager for a user' do
+      user = FactoryBot.create(:bridge_cache_user)
+      domain = FactoryBot.create(:bridge_cache_domain, owner: user)
+      user2 = FactoryBot.create(:bridge_cache_user, domain: domain)
+      expect(user2.manager.id).to(eq(user.id))
+    end
+  end
 
 end

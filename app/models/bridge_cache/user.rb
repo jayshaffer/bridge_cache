@@ -21,5 +21,9 @@ module BridgeCache
       where('bridge_cache_users.sub_account_id = ?', domain_id)
     end
 
+    def manager
+      domain.owner
+    end
+
   end
 end

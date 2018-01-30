@@ -9,4 +9,12 @@ describe BridgeCache::Domain, type: :model do
     end
   end
 
+  describe '#owner' do
+    it 'should get the owner of a domain (manager)' do
+      user = FactoryBot.create(:bridge_cache_user)
+      domain = FactoryBot.create(:bridge_cache_domain, owner: user)
+      expect(domain.owner.id).to(eq(user.id))
+    end
+  end
+
 end

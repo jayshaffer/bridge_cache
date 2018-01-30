@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'byebug', '>= 9.1.0'
   s.add_development_dependency 'actionpack', '>= 5.1.4'
   s.add_development_dependency "rspec-rails", ">= 3.7.2"
-  s.add_development_dependency "factory_girl_rails", ">= 4.9.0"
+  s.add_development_dependency "factory_bot_rails", '>= 4.8.2'
   s.add_development_dependency 'combustion', '>= 0.7.0'
   s.add_development_dependency 'bundler', '>= 1.16.0'
   s.add_development_dependency 'database_cleaner', '>= 1.6.2'
