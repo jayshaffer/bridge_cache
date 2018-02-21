@@ -5,7 +5,7 @@ module BridgeCache
     before_save :fix_item_type
 
     belongs_to :item, polymorphic: true, optional: true
-    belongs_to :domain, foreign_key: :domain_id, primary_key: BridgeCache.primary_key, class_name: 'BridgeCache::Domain', optional: true
+    belongs_to :domain, foreign_key: :domain_id, primary_key: BridgeCache.primary_key, class_name: BridgeCache::Domain.name, optional: true
 
     private
 
