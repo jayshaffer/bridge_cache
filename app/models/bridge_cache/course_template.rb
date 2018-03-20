@@ -10,6 +10,7 @@ module BridgeCache
     has_many :affiliated_sub_accounts, primary_key: BridgeCache.primary_key, class_name: BridgeCache::AffiliatedSubAccount.name, as: :item
     has_many :domains, through: :affiliated_sub_accounts
     belongs_to :sub_account, foreign_key: :sub_account_id, primary_key: BridgeCache.primary_key, class_name: BridgeCache::Domain.name, optional: true
+    has_many :enrollment_profiles, as: :enrollable, primary_key: BridgeCache.primary_key, class_name: BridgeCache::EnrollmentProfile.name
 
     def self.for_domain(domain_id)
       includes(:domains)

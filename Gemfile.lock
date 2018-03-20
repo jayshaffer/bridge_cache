@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bridge_cache (0.2.4)
+    bridge_cache (0.2.5)
       bridge_blueprint (~> 0.0.04)
       rails (~> 5.0)
 
@@ -93,7 +93,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multipart-post (2.0.0)
-    nio4r (2.2.0)
+    nio4r (2.3.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     open_uri_redirections (0.2.1)

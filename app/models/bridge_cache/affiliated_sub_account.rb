@@ -10,7 +10,7 @@ module BridgeCache
     private
 
     def fix_item_type
-      self.item_type = "BridgeCache::#{self.item_type}" unless self.item_type.starts_with?("BridgeCache::")
+      self.item_type = "BridgeCache::#{self.item_type}" unless self.item_type&.starts_with?("BridgeCache::")
     end
 
     def self.cleanup(current_row_ids)

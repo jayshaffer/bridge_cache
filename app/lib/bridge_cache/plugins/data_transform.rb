@@ -9,5 +9,11 @@ module BridgeCache::Plugins
       row
     end
 
+    def self.valid_json?(json)
+      json = JSON.parse(json) unless json.class == Hash
+      return json
+    rescue JSON::ParserError => e
+      return false
+    end
   end
 end

@@ -1,0 +1,3 @@
+id,enrollable_id,enrollable_type,domain_id,deleted_at,created_at,updated_at,auto_re_enroll,config,uuid,expires,open_enrollment
+3,1,CourseTemplate,2,nil,2018-03-20 04:02:39.104644,2018-03-20 04:03:30.141651,f,{'external_course_id':'11111'},37ba44d7,f,f
+4,2,CourseTemplate,2,nil,2018-03-20 04:01:39.104644,2018-03-20 04:05:30.141651,f,{},007b57cb,f,f
